@@ -22,7 +22,7 @@ const init = async (req, res) => {
         let result = await payment.create({
             body: {
                 transaction_amount: Number(req.body.value),
-                description: 'Pagamento do Makeroom',
+                description: `Compra de ${req.body.items} no Makeroom`,
                 payment_method_id: 'pix',
                 date_of_expiration: expiration(),
                 payer: {
